@@ -12,6 +12,9 @@ namespace POC_Domain.Entities
         public DateTime DateAdded { get; set; } // datetime, System date
         public DateTime? DateLastModified { get; set; } // datetime, NULL if no update
         public string AddedBy { get; set; } = string.Empty; // nvarchar(50), Login ID
-        public string? LastModifiedBy { get; set; } // nvarchar(50), NULL if no update
+        public string? LastModifiedBy { get; set; } = string.Empty;// nvarchar(50), NULL if no update
+
+        //Establish relationship tracking path
+        public ICollection<Institution> Institutions { get; set; } = new List<Institution>();
     }
 }

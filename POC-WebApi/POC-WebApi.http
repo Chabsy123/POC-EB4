@@ -4,3 +4,19 @@ GET {{POC_WebApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{POC_WebApi_HostAddress}}/api/FI/1
+###
+
+POST {{POC_WebApi_HostAddress}}/api/FI
+Content-Type: application/json
+{
+    "fiName": "Stanbic IBTC Bank",
+    "fiCategory": "Commercial Bank",
+    "fiCode": "075",
+    "mnemonic": "SIBTC",
+    "dateAdded": "2026-06-03T15:42:48.1811894",
+    "dateLastModified": "2026-06-03T15:44:47.7424959",
+    "addedBy": "Peace",
+    "lastModifiedBy": "Peace"
+}

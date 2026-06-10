@@ -4,3 +4,5 @@
   <Project Path="POC-Infrastructure/POC-Infrastructure.csproj" />
   <Project Path="POC-WebApi/POC-WebApi.csproj" />
 </Solution>
+
+

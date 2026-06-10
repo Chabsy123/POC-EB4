@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using POC_Application.Interfaces;
 using POC_Application.Services;
 using POC_Domain.Interfaces;
 using POC_Infrastructure.Data;
@@ -15,14 +16,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IFinancialInstitution, FinancialInstitutionRepository>();
 builder.Services.AddScoped<FinancialInstitutionService>();
 
-// 3. Register Controllers and OpenAPI/Swagger Documentation tooling
+// 3.Register New Institution Dependencies
+builder.Services.AddScoped<IInstitution, InstitutionRepository>();
+builder.Services.AddScoped<InstitutionService>();
+
+// 4. Register Controllers and OpenAPI/Swagger Documentation tooling
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 4. Configure HTTP request pipeline
+// 5. Configure HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
